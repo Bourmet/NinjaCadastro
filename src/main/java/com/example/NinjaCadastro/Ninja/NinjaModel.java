@@ -23,6 +23,7 @@ public class NinjaModel {
     @Column(name = "img_url")
     private String imgUrl;
     private int age;
+    private String rank;
     @ManyToOne
     @JoinColumn(name = "missions_id")   // Foreing Key
     private MissionModel missions;
