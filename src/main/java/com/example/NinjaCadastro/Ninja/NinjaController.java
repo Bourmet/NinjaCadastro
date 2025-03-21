@@ -17,24 +17,27 @@ public class NinjaController {
     public String bomDia(){
         return "1° mensagem";
     }
+
     //Add Ninja - CREATE
     @PostMapping("/add")
-    public NinjaModel createNinja(@RequestBody NinjaModel ninjaModel){
-        return ninjaService.createNinja(ninjaModel);
+    public NinjaDTO createNinja(@RequestBody NinjaDTO ninja){
+        return ninjaService.createNinja(ninja);
     }
+
     //Procurar ninja por Id - READ
     @GetMapping("/show/{id}")
-    public NinjaModel show(@PathVariable Long id){
+    public NinjaDTO show(@PathVariable Long id){
         return ninjaService.show(id);
     }
+
     //Mostrar todos os ninjas
     @GetMapping("/all")
-    public List<NinjaModel> showAll(){
+    public List<NinjaDTO> showAll(){
         return ninjaService.showAll();
     }
     //Alterar dados dos ninjas - UPDATE
     @PutMapping("/change/{id}")
-    public NinjaModel change(@PathVariable Long id,@RequestBody NinjaModel ninjaMod){
+    public NinjaDTO change(@PathVariable Long id,@RequestBody NinjaDTO ninjaMod){
         return ninjaService.change(id, ninjaMod);
     }
     //Deletar ninja - DELETE
